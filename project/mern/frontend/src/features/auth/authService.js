@@ -1,0 +1,43 @@
+import axios from "axios"
+
+const API_URL = "http://localhost:5000/api/users/" //CHANGED ALSO PROXY REMOVED FROM package.json
+
+const register = async (userData)=>{
+    const response = await axios.post(API_URL, userData)
+
+    if(response.data){
+        localStorage.setItem("user", JSON.stringify(response.data))
+    }
+
+    return response.data
+}
+
+const login = async (userData)=>{
+    const response = await axios.post(API_URL+"login", userData)
+
+    if(response.data){
+        localStorage.setItem("user", JSON.stringify(response.data))
+    }
+
+    return response.data
+}
+
+const logout = () => {
+    localStorage.removeItem("user")
+}
+
+const getAll = async()=>{
+    const response = await axios.get(API_URL+"all")
+
+    return response.data
+}
+
+
+const authService = {
+    register,
+    logout,
+    login,
+    getAll
+}
+
+export default authService
