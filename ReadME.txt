@@ -8,5 +8,5 @@ MongoDB and Node.js are also required to be installed before
 The project itself is an addition/change to mern-stack tutorial exercise.
 New additions/changes:
 Goals are now "posts", and are ordered from newest to oldest
-Users are still only ones that can add/delete their own posts, but they are now viewable to everybody
-Add a user list page that shows every user, and clicking on their name links to their posts / user page
+Users are still the only ones that can add/delete their own posts, but they are now viewable to everybody
+Added a user list page that shows every user, and clicking on their name links to their posts / user page
